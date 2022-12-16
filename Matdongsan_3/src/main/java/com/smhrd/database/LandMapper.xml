@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper 태그 : SQL문 정리하는 태그 -->
+<!-- namespace : id를 그룹화, mapper의 경로를 입력 -->
+<mapper namespace="com.smhrd.database.LandMapper">
+	<!-- select, insert, update, delete 태그들이 존재함 -->
+	<!-- id : 해당 태그의 고유한 식별자 -->
+	<!-- parameterType : 매개변수 타입 -->
+	<!-- resultType : 리턴타입 -->
+	<!-- 바인드변수처럼 #{필드명=컬럼명} -->
+ 	<insert id="insertMember" parameterType="com.smhrd.domain.Member">
+ 		insert into userinfo values (userseq.nextval, #{user_id},#{user_pw},#{user_email})	
+ 	</insert>
+ 	<select id="loginMember" parameterType="com.smhrd.domain.Member"
+ 								resultType="com.smhrd.domain.Member">
+ 		select * from userinfo where user_id=#{user_id} and user_pw=#{user_pw}
+ 	</select>
+ 	<update id="updateMember" parameterType="com.smhrd.domain.Member">
+ 		update userinfo set user_pw=#{user_pw}, user_email=#{user_email}, user_no=#{user_no}
+ 		where user_id=#{user_id} 	
+ 	</update>
+ 	<select id="selectLand" parameterType="com.smhrd.domain.LandDTO"
+ 								resultType="com.smhrd.domain.LandDTO">
+ 		select * from landinfo where apt_name =#{input} or apt_addr=#{input}
+  	</select>
+ 	<select id="loginnew" parameterType="com.smhrd.domain.Member"
+ 								resultType="com.smhrd.domain.Member">
+ 		select * from userinfo where user_id=#{user_id} and user_pw=#{user_pw}
+ 	</select>
+ 	<select id="selectAllLand" parameterType="String"
+ 								resultType="com.smhrd.domain.LandDTO">
+ 		select * from landinfo3 where 
+ 		apt_name like '%'||#{input}||'%'
+ 		or apt_addr like '%'||#{input}||'%'
+  	</select> 
+ 	<select id="SelectLand" parameterType="com.smhrd.domain.LandDTO"
+ 								resultType="com.smhrd.domain.LandDTO">
+ 		select * from landinfo3 where apt_no=#{apt_no}
+ 	</select>
+ 	<insert id="insertSG" parameterType="com.smhrd.domain.Member">
+ 		insert into suggestion values (sgSeq.nextval, #{user_no},#{sg_content},#{sg_title},#{sg_email})	
+ 	</insert>
+ 	
+ 	<select id="selectSG" parameterType="int"
+ 								resultType="com.smhrd.domain.SGDTO">
+ 		select * from suggestion where user_no =#{user_no}
+  	</select>  	
+ 	
+ 	<delete id="deleteSG" parameterType="int">
+ 		delete from suggestion where sg_no=#{sg_no}
+ 	</delete>
+
+ 	<insert id="insertBM" parameterType="com.smhrd.domain.BMDTO">
+ 		insert into bookmark values (bmSeq.nextval, #{user_no}, #{apt_no}, #{apt_name}, #{apt_area}, #{apt_price} )	
+ 	</insert>
+ 	
+  	<select id="selectBM" parameterType="int"
+ 								resultType="com.smhrd.domain.BMDTO">
+ 		select * from bookmark where user_no =#{user_no}
+  	</select>
+ 	<delete id="deleteBM" parameterType="int">
+ 		delete from bookmark where bm_no=#{bm_no}
+ 	</delete> 
+ 	<select id="SelectTP" parameterType="com.smhrd.domain.TPDTO"
+ 								resultType="com.smhrd.domain.TPDTO">
+ 		select * from tpinfo where tp_addr=#{tp_addr} and tp_addr2=#{tp_addr2}
+ 		and tp_area between (#{tp_area}-3) and (#{tp_area}+3)
+ 		
+  	</select>
+  	   <select id="doJoin" parameterType="com.smhrd.domain.Member"
+                         resultType="com.smhrd.domain.Member">
+       select * from userinfo where user_email=#{user_email}
+    </select>
+    <select id="doPW" parameterType="com.smhrd.domain.MemMem"
+                         resultType="com.smhrd.domain.MemMem">
+       select * from userinfo where user_id=#{user_id} and user_email=#{user_email}
+    </select>
+</mapper>

@@ -1,0 +1,186 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	text-decoration: none;
+	font-family: sans-serif;
+}
+
+.fonsize {
+	font-size: 1em;
+	text-align: center;
+	width: 500px;
+}
+
+body {
+	background-image: #34495e;
+}
+
+.joinForm {
+	position: absolute;
+	width: 500px;
+	height: 600px;
+	padding: 30px, 20px;
+	background-color: rgba(255, 255, 255, 0.95);
+	text-align: center;
+	top: 65%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 15px;
+}
+
+.joinForm h2 {
+	text-align: center;
+	margin: 30px;
+}
+
+.joinForm_Login {
+	position: absolute;
+	width: 500px;
+	height: 500px;
+	padding: 30px, 20px;
+	background-color: rgba(255, 255, 255, 0.95);
+	text-align: center;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 15px;
+}
+
+.joinForm_Login h2 {
+	text-align: center;
+	margin: 30px;
+}
+.joinForm_search{
+   position: absolute;
+   width: 500px;
+   height: 700px;
+   padding: 30px, 20px;
+   background-color: rgba(255, 255, 255, 0.95);
+   text-align: center;
+   top: 60%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   border-radius: 15px;
+}
+
+.joinForm_search h2{
+   text-align: center;
+   margin: 30px;
+}
+
+.joinForm_check {
+	position: absolute;
+	width: 650px;
+	height: 85px;
+	padding: 30px, 20px;
+	background-color: rgba(255, 255, 255, 0.95);
+	text-align: center;
+	top: 60%;
+	left: 52%;
+	transform: translate(-50%, -50%);
+	border-radius: 5px;
+}
+
+.joinForm_check h2 {
+	text-align: center;
+	margin: 30px;
+	font-size: medium;
+}
+
+.select_check {
+	font-size: 13pt;
+}
+
+.textForm {
+	border-bottom: 2px solid #adadad;
+	margin: 40px;
+}
+
+.id {
+	width: 100%;
+	border: none;
+	outline: none;
+	color: #636e72;
+	font-size: 16px;
+	height: 25px;
+	background: none;
+}
+
+.pw {
+	width: 100%;
+	border: none;
+	outline: none;
+	color: #636e72;
+	font-size: 16px;
+	height: 25px;
+	background: none;
+}
+
+.email {
+	width: 100%;
+	border: none;
+	outline: none;
+	color: #636e72;
+	font-size: 16px;
+	height: 25px;
+	background: none;
+}
+
+.btn {
+	position: relative;
+	left: 20%;
+	transform: translateX(-50%);
+	margin-bottom: 50px;
+	width: 40%;
+	height: 50px;
+	background: #005555;
+	background-size: 200%;
+	color: white;
+	font-weight: bold;
+	border: none;
+	cursor: pointer;
+	transition: 0.4s;
+	display: inline;
+}
+
+.btn_two {
+	position: relative;
+	left: 10%;
+	transform: translateX(-50%);
+	margin-bottom: 50px;
+	width: 30%;
+	height: 40px;
+	background: #005555;
+	background-position: right;
+	background-size: 200%;
+	color: white;
+	font-weight: bold;
+	border: none;
+	cursor: pointer;
+	transition: 0.4s;
+	display: inline;
+	border-radius:inherit;
+}
+
+.btn_three {
+	position: relative;
+	left: 20%;
+	transform: translateX(-50%);
+	margin-bottom: 50px;
+	width: 30%;
+	height: 40px;
+	background: #005555;
+	background-position: left;
+	background-size: 200%;
+	color: white;
+	font-weight: bold;
+	border: none;
+	cursor: pointer;
+	transition: 0.4s;
+	display: inline;
+	border-radius:inherit;
+}
+
+.btn:hover {
+	background-position: right;
+}
